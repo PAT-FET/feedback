@@ -1,0 +1,92 @@
+@import "./var.scss";
+
+@mixin textarea {
+  min-height: 24px;
+  max-height: 64px;
+  height: 24px;
+  line-height: 1.5;
+  padding: 8px;
+  overflow: auto;
+  border: solid #e2e2e2 1px;
+  border-radius: 4px;
+  width: 100%;
+
+  &:focus {
+    border-color: $primary-color;
+    outline: 0;
+  }
+  &:invalid {
+    border-color: red;
+  }
+}
+
+@mixin input {
+  line-height: 1.5;
+  height: 32px;
+  padding: 0 8px;
+
+  border: solid #e2e2e2 1px;
+  border-radius: 4px;
+  width: 100%;
+
+  &:focus {
+    border-color: $primary-color;
+    outline: 0;
+  }
+
+  &:invalid {
+    border-color: red;
+  }
+}
+
+@mixin btn {
+    padding: 6px 12px;
+    height: 32px;
+    border: 1px $primary-color solid;
+    border-radius: 4px;
+    white-space: nowrap;
+    cursor: pointer;
+    &:hover {
+        opacity: .8;
+        outline: 0;
+    }
+    &:focus {
+        outline: 0;
+    }
+}
+
+@mixin plain-btn {
+    @include btn();
+    color: $primary-color;
+}
+
+@mixin primary-btn {
+    @include btn();
+    color: #fff;
+    background: $primary-color;
+}
+
+@mixin link {
+    color: $primary-color;
+    cursor: pointer;
+    font-size: $font-sm;
+    &:hover {
+        opacity: .8;
+    }
+}
+
+@mixin tag {
+  margin: 0 8px;
+  display: inline-block;
+  border-radius: 4px;
+  border: 1px solid $border-color;
+  color: #999;
+  font-size: $font-sm;
+  padding: 4px 8px;
+  cursor: pointer;
+  &[checked] {
+    color: #fff;
+    background: $primary-color;
+    border-color: $primary-color;
+  }
+}
